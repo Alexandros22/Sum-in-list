@@ -3,13 +3,13 @@
 
 
 
-struct lista_akeraiwn *insert(struct lista_akeraiwn**, int);   // funtion which inserts numbers(elements) in list //
-void Sum(struct lista_akeraiwn *head, struct lista_akeraiwn *last, int athr);  // sum function //
+struct int_list *insert(struct int_list**, int);   // funtion which inserts numbers(elements) in list //
+void Sum(struct int_list *head, struct int_list *last, int athr);  // sum function //
 
-struct lista_akeraiwn  // integral list //
+struct int_list  // integral list //
 {
 	int x;
-	struct lista_akeraiwn *next;
+	struct int_list *next;
 };
 
 
@@ -20,7 +20,7 @@ main()
 	
 	do
 	{
-		struct lista_akeraiwn *head=NULL;  // create of head //
+		struct int_list *head=NULL;  // create of head //
 		do
 		{
 			printf("How many elements you want to put:");  
@@ -36,7 +36,7 @@ main()
 	
 		Sum(head, head, 0);  // sum of the elements //
 
-		printf("\nPress any button to repeat or press 'e' to exit:"); 
+		printf("\nPress any button to repeat or press 'e' to exit:\n"); 
 		fflush(stdin);
 		scanf("%c", &ans);
 	}while (ans!='e');  // repeat program //
@@ -44,12 +44,12 @@ main()
 }
 
 
-struct lista_akeraiwn *insert(struct lista_akeraiwn **head, int a)
+struct int_list *insert(struct int_list **head, int a)
 {
-	struct lista_akeraiwn *temp=*head;  // create temp //
-	struct lista_akeraiwn *temp2;    // create temp2 //
+	struct int_list *temp=*head;  // create temp //
+	struct int_list *temp2;    // create temp2 //
 
-	temp2=(struct lista_akeraiwn*)malloc(sizeof(struct lista_akeraiwn*));  // memory alocation of temp2 //
+	temp2=(struct int_list*)malloc(sizeof(struct int_list*));  // memory alocation of temp2 //
 
 	temp2->x=a;        // put element in temp2 //
 	temp2->next=NULL;  // put NULL in the next node of the list (end of list) //
@@ -70,7 +70,7 @@ struct lista_akeraiwn *insert(struct lista_akeraiwn **head, int a)
 
 
 
-void Sum(struct lista_akeraiwn *head, struct lista_akeraiwn *last, int athr)
+void Sum(struct int_list *head, struct int_list *last, int athr)
 {
 
 	if((head->x==100 && head->next->x==0) || (head->x==0 && head->next->x==100))  // if the head is 100 and the next node is 0 or the opposite then there is sum 100 (2 numbers 0,100) //
